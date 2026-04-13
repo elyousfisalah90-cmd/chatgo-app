@@ -25,4 +25,3 @@ export async function POST(req) {
       reply: "❌ وقع مشكل",
     });
   }
-}
