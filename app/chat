@@ -1,0 +1,7 @@
+export default function ChatPage() {
+  return (
+    <div style={{ textAlign: "center", marginTop: "100px" }}>
+      <h1>💬 مرحبا بك فالشات</h1>
+    </div>
+  );
+}
