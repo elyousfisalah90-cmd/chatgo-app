@@ -17,7 +17,7 @@ export async function POST(req) {
     const data = await res.json();
 
     return Response.json({
-      reply: data.output?.[0]?.content?.[0]?.text || "❌ ماكاين جواب",
+      reply: data.output_text || "❌ ماكاين جواب",
     });
 
   } catch (error) {
