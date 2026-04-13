@@ -1,8 +1,9 @@
+
 export async function POST(req) {
   try {
     const { message } = await req.json();
 
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    const res = await fetch("https://api.openai.com/v1/responses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -10,18 +11,14 @@ export async function POST(req) {
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
-        messages: [
-          { role: "user", content: message }
-        ],
+        input: message,
       }),
     });
 
     const data = await res.json();
 
-    console.log(data); // 👈 باش تشوف واش خدام
-
     return Response.json({
-      reply: data?.choices?.[0]?.message?.content || "❌ ما كاين جواب",
+      reply: data?.output?.[0]?.content?.[0]?.text || "❌ ما كاين جواب",
     });
 
   } catch (error) {
