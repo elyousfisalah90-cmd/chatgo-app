@@ -1,5 +1,5 @@
 <button
-  onClick={() => alert("مرحبا بك ف ChatGo 💬")}
+  onClick={() => alert('مرحبا بك ف ChatGo 💬')}
   style={{
     marginTop: "20px",
     padding: "12px 25px",
