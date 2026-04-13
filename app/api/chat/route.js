@@ -1,3 +1,4 @@
+
 export async function POST(req) {
   try {
     const { message } = await req.json();
@@ -17,7 +18,7 @@ export async function POST(req) {
     const data = await res.json();
 
     return Response.json({
-      reply: data.output_text || "❌ ما كاين جواب",
+      reply: data.output?.[0]?.content?.[0]?.text || "❌ ما كاين جواب",
     });
 
   } catch (error) {
@@ -25,3 +26,4 @@ export async function POST(req) {
       reply: "❌ وقع مشكل",
     });
   }
+}
