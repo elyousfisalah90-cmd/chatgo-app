@@ -1,0 +1,36 @@
+"use client";
+
+import { useState } from "react";
+
+export default function ChatPage() {
+  const [message, setMessage] = useState("");
+  const [reply, setReply] = useState("");
+
+  const sendMessage = async () => {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      body: JSON.stringify({ message }),
+    });
+
+    const data = await res.json();
+    setReply(data.reply);
+  };
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>💬 Chat</h1>
+
+      <input
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder="كتب هنا..."
+      />
+
+      <button onClick={sendMessage}>
+        إرسال
+      </button>
+
+      <p>{reply}</p>
+    </div>
+  );
+}
