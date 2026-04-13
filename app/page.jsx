@@ -7,19 +7,26 @@ export default function Home() {
       height: "100vh",
       flexDirection: "column",
       backgroundColor: "#0f172a",
-      color: "white"
+      color: "white",
+      textAlign: "center"
     }}>
-      <h1 style={{ fontSize: "40px" }}>
+      <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
         🚀 ChatGo
       </h1>
-      <p>مرحبا بك فالتطبيق ديالك 💬</p>
+
+      <p style={{ opacity: 0.8 }}>
+        مرحبا بك فالتطبيق ديالك 💬
+      </p>
+
       <button style={{
         marginTop: "20px",
-        padding: "10px 20px",
-        borderRadius: "10px",
+        padding: "12px 25px",
+        borderRadius: "12px",
         border: "none",
         background: "#22c55e",
-        color: "white"
+        color: "white",
+        fontSize: "16px",
+        cursor: "pointer"
       }}>
         دخول
       </button>
